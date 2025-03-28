@@ -1,0 +1,1 @@
+#masonry.svelte-1ehkpiw{display:grid;grid-template-columns:repeat(var(--numCols),1fr);gap:var(--gap)}#masonry .child{display:flex;flex-direction:column;gap:var(--gap)}td.svelte-tnprmy{white-space:pre-wrap}details.svelte-1t599km>summary:where(.svelte-1t599km){list-style:none}details.svelte-1t599km>summary:where(.svelte-1t599km)::-webkit-details-marker{display:none}
