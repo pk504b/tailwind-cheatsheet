@@ -9,7 +9,6 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"gh-pages": "npm run build && npx gh-pages -d build"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^6.0.1",
@@ -23,7 +22,6 @@
 		"vite": "^5.4.11"
 	},
 	"dependencies": {
-		"@vercel/analytics": "^1.4.1",
 		"install": "^0.13.0"
 	}
 }
