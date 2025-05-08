@@ -6,37 +6,22 @@
     let searchInput: HTMLInputElement;
     let kbd: HTMLElement;
 
-    let isCtrlPressed = false;
-
     const handleKeyDown = (event: KeyboardEvent) => {
-        if (event.key === "Control" || event.key === "Meta") {
-            isCtrlPressed = true;
-        }
-
-        // Detect Ctrl + K
-        if (isCtrlPressed && event.key === "k") {
+        if ((event.ctrlKey || event.metaKey) && event.key === "k") {
             event.preventDefault();
             searchInput.focus();
             searchInput.select();
         }
     };
 
-    const handleKeyUp = (event: KeyboardEvent) => {
-        if (event.key === "Control" || event.key === "Meta") {
-            isCtrlPressed = false;
-        }
-    };
-
     onMount(() => {
         window.addEventListener("keydown", handleKeyDown);
-        window.addEventListener("keyup", handleKeyUp);
     });
 
     onDestroy(() => {
         // Clean up the event listeners when the component is destroyed
         if (browser) {
             window.removeEventListener("keydown", handleKeyDown);
-            window.removeEventListener("keyup", handleKeyUp);
         }
     });
 </script>
