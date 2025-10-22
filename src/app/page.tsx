@@ -5,7 +5,6 @@ import MasonryLayout from "@/components/MasonryLayout";
 import { loadTwJson, twVersions } from "@/utils";
 import Toast from "@/components/Toast";
 import { TwJson } from "@/utils/types";
-import AdPopup from "@/components/AdPopup";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -28,7 +27,6 @@ export default function Home() {
       <Footer />
     </div>
     <Toast copied={""} toastVisible={false} />
-    <AdPopup />
     </>
   );
 }
