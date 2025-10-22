@@ -16,7 +16,7 @@ export default function TwCard({ idx, title, children }: Props) {
   return (
     <>
       <section key={idx} className="border border-black/20 bg-gray-100 dark:bg-gray-900 rounded-md break-inside-avoid">
-        <h2 className="font-bold p-2 px-4">{title}</h2>
+        <h2 className="searchable font-bold p-2 px-4">{title}</h2>
         {children.map((b, i) =>
           <details key={i+b.title}
             className="group border-t border-sky-500/20"
@@ -27,7 +27,7 @@ export default function TwCard({ idx, title, children }: Props) {
             }}
           >
             <summary className="cursor-pointer flex justify-between py-2 px-4 hover:bg-white dark:hover:bg-black group-open:bg-white dark:group-open:bg-black">
-              <h3 className="text-xs font-semibold">{b.title}</h3>
+              <h3 className="searchable text-xs font-semibold">{b.title}</h3>
 
               <div className="flex gap-2">
                 <a
@@ -56,8 +56,8 @@ export default function TwCard({ idx, title, children }: Props) {
                           setToastVisible(false)
                         }, 1500);
                       }}>
-                        <td className="pt-1 pb-1 text-sky-500 "><code>.{c.class}</code></td>
-                        <td className=" p-1 text-sky-500 "><code>{c.properties}</code></td>
+                        <td className="searchable pt-1 pb-1 text-sky-500 "><code>.{c.class}</code></td>
+                        <td className="searchable p-1 text-sky-500 "><code>{c.properties}</code></td>
                         <td className="pt-1 pb-1 pr-1 italic">{c.value}</td>
                       </tr>
                     )}
