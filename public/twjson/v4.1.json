@@ -33443,36 +33443,6 @@
               "class": "border-separate",
               "properties": "border-collapse: separate;",
               "value": ""
-            },
-            {
-              "class": "Indiana",
-              "properties": "Indianapolis",
-              "value": ""
-            },
-            {
-              "class": "Ohio",
-              "properties": "Columbus",
-              "value": ""
-            },
-            {
-              "class": "Michigan",
-              "properties": "Detroit",
-              "value": ""
-            },
-            {
-              "class": "Indiana",
-              "properties": "Indianapolis",
-              "value": ""
-            },
-            {
-              "class": "Ohio",
-              "properties": "Columbus",
-              "value": ""
-            },
-            {
-              "class": "Michigan",
-              "properties": "Detroit",
-              "value": ""
             }
           ]
         },
@@ -33524,21 +33494,6 @@
             {
               "class": "border-spacing-y-[<value>]",
               "properties": "border-spacing: var(--tw-border-spacing-x) <value>;",
-              "value": ""
-            },
-            {
-              "class": "Indiana",
-              "properties": "Indianapolis",
-              "value": ""
-            },
-            {
-              "class": "Ohio",
-              "properties": "Columbus",
-              "value": ""
-            },
-            {
-              "class": "Michigan",
-              "properties": "Detroit",
               "value": ""
             }
           ]
