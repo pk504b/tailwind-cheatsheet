@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     siteName: "Tailwind CSS Cheatsheet",
     images: [
       {
-        url: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.d52e9897.svg",
-        width: 1200,
-        height: 630,
+        url: "https://tailwindcss.504b.cc/og-card.png",
+        width: 600,
+        height: 315,
       },
     ],
     locale: "en-US",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     description: "A quick reference guide to learn Tailwind CSS. Easily browse and search through all Tailwind utility classes and CSS properties on a single page.",
     images: [
       {
-        url: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.d52e9897.svg",
-        width: 1200,
-        height: 630,
+        url: "https://tailwindcss.504b.cc/og-card.png",
+        width: 600,
+        height: 315,
       },
     ],
   }
