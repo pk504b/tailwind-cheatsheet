@@ -3,7 +3,7 @@
 
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
-    width: 3px;
+    width: 4px;
     /* height: 20%; */
   }
 
@@ -19,11 +19,11 @@
 
   @media (prefers-color-scheme: dark) {
     .scrollbar::-webkit-scrollbar-track {
-      background: #ebcaca;
-    }
-
-    .scrollbar::-webkit-scrollbar-thumb {
       background: #615e5e;
+    }
+    
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #ebcaca;
     }
   }
 }
