@@ -16,7 +16,7 @@ export default function TwCard({ idx, title, children }: Props) {
   return (
     <>
       <section key={idx} className="border border-black/20 bg-gray-100 dark:bg-gray-900 rounded-md break-inside-avoid">
-        <h2 className="searchable font-bold p-2 px-4">{title}</h2>
+        <h2 className="font-bold p-2 px-4">{title}</h2>
         {children.map((b, i) =>
           <details key={i+b.title}
             className="group border-t border-sky-500/20"

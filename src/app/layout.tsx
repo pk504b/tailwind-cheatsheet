@@ -46,7 +46,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" sizes="any" />
       </head>
       <GoogleAnalytics gaId="G-10E14JPSK5" />
-      <body>
+      <body className="overflow-y-scroll">
         {children}
       </body>
     </html>

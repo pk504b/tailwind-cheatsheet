@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="mt-4 text-xs italic opacity-70 flex flex-col gap-2 md:flex-row justify-between">
-      <a href="https://taillens.io/?aff=zmn621">
+      <a href="https://taillens.io/?aff=zmn621" target="_blank">
         Need Tailwind CSS in your browser?
       </a>
 

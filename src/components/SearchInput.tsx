@@ -7,6 +7,7 @@ export default function SearchInput() {
   const kbdRef = useRef<HTMLSpanElement>(null);
   const [query, setQuery] = useState("");
 
+  // Handle Ctrl+K
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.ctrlKey || event.metaKey) && event.key === "k") {
@@ -28,6 +29,7 @@ export default function SearchInput() {
     };
   }, []);
 
+  // Highlight search results
   useEffect(() => {
     const details = document.querySelectorAll("details");
     details.forEach((el) => {
@@ -52,7 +54,8 @@ export default function SearchInput() {
 
         const matches = searchableText.includes(query.toLowerCase());
         matches ? el.classList.remove("hidden") : el.classList.add("hidden");
-        el.open = matches;
+        const h3Text = el.querySelector("h3")?.textContent?.toLowerCase() || "";
+        el.open = matches && !h3Text.includes("color");
 
         // Apply highlighting only to visible elements
         if (matches) {
