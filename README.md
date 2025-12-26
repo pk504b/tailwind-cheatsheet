@@ -8,16 +8,16 @@
 
 ## Features
 
-- **⚡ Instant Search**: Real-time filtering with high-performance debouncing. Find classes as you type.
-- **🎯 Dynamic Highlighting**: Matches are clearly highlighted within class names and properties.
-- **🧩 Masonry Layout**: Optimized grid system to fit as much information as possible on your screen.
-- **🌓 Dark Mode**: Fully native dark and light mode support.
-- **📋 One-Click Copy**: Click any class name to copy it instantly to your clipboard.
-- **⌨️ Keyboard First**:
+- ⚡ Search and filter Tailwind CSS classes
+- 🎯 Highlighting matched classes
+- 🧩 Masonry grid layout for optimal use of screen space
+- 🌓 Dark mode support
+- 📋 One-Click copy to clipboard
+- ⌨️ Keyboard shortcuts:
   - `⌘ K` (or `Ctrl K`) to focus search.
   - `Esc` to clear search and collapse all.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
