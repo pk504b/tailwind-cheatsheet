@@ -37,10 +37,10 @@ export default function SearchInput() {
 
       // Remove previous highlights
       searchables.forEach((node) => {
-        const originalText = node.getAttribute("data-original-text");
-        originalText
-          ? (node.innerHTML = originalText)
-          : node.setAttribute("data-original-text", node.innerHTML);
+        const originalHtml = node.getAttribute("data-original-html");
+        originalHtml
+          ? (node.innerHTML = originalHtml)
+          : node.setAttribute("data-original-html", node.innerHTML);
       });
 
       if (query === "") {
@@ -60,9 +60,18 @@ export default function SearchInput() {
         // Apply highlighting only to visible elements
         if (matches) {
           searchables.forEach((node) => {
-            const text = node.textContent;
-            const regex = new RegExp(`(${query})`, "gi");
-            const highlighted = text.replace(regex, `<mark>$1</mark>`);
+            const text = node.textContent || "";
+            // Escape regex special characters in query
+            const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+            const regex = new RegExp(`(${escapedQuery})`, "gi");
+
+            // Escape HTML in the source text before applying highlights
+            const escapedText = text
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;");
+
+            const highlighted = escapedText.replace(regex, `<mark>$1</mark>`);
             node.innerHTML = highlighted;
           });
         }

@@ -18,7 +18,7 @@ export default function TwCard({ idx, title, children }: Props) {
       <section key={idx} className="border border-black/20 bg-gray-100 dark:bg-gray-900 rounded-md break-inside-avoid">
         <h2 className="font-bold p-2 px-4">{title}</h2>
         {children.map((b, i) =>
-          <details key={i+b.title}
+          <details key={i + b.title}
             className="group border-t border-sky-500/20"
             onToggle={(e) => {
               const detailsEl = e.target as HTMLDetailsElement;
@@ -48,7 +48,7 @@ export default function TwCard({ idx, title, children }: Props) {
                 <table className="w-full">
                   <tbody>
                     {b.table.map((c, j) =>
-                      <tr key={j+c.class} className="text-xs cursor-copy font-mono hover:bg-gray-100 dark:hover:bg-gray-900 group/tr" onClick={() => {
+                      <tr key={j + c.class} className="text-xs cursor-copy font-mono hover:bg-gray-100 dark:hover:bg-gray-900 group/tr" onClick={() => {
                         navigator.clipboard.writeText(c.class)
                         setCopied(c.class)
                         setToastVisible(true)
@@ -56,8 +56,8 @@ export default function TwCard({ idx, title, children }: Props) {
                           setToastVisible(false)
                         }, 1500);
                       }}>
-                        <td className="searchable pt-1 pb-1 text-sky-500 "><code>.{c.class}</code></td>
-                        <td className="searchable p-1 text-sky-500 "><code>{c.properties}</code></td>
+                        <td className="pt-1 pb-1 text-sky-500 "><code className="searchable">.{c.class}</code></td>
+                        <td className="p-1 text-sky-500 "><code className="searchable">{c.properties}</code></td>
                         <td className="pt-1 pb-1 pr-1 italic">{c.value}</td>
                       </tr>
                     )}
