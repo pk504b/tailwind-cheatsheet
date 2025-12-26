@@ -13,20 +13,20 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-        const data = await loadTwJson(currTw);
-        setJsonData(data);
-      })();
+      const data = await loadTwJson(currTw);
+      setJsonData(data);
+    })();
   }, [currTw]);
 
   return (
     <>
-    <div className="min-h-dvh flex flex-col max-w-screen-2xl mx-auto p-4">
-      <div className="flex-1 h-full">
-        <MasonryLayout currTw={currTw} setCurrTw={setCurrTw} twJson={jsonData} />
+      <div className="min-h-dvh flex flex-col max-w-screen-2xl mx-auto p-4">
+        <div className="flex-1 h-full">
+          <MasonryLayout currTw={currTw} setCurrTw={setCurrTw} twJson={jsonData} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-    <Toast copied={""} toastVisible={false} />
+      <Toast copied={""} toastVisible={false} />
     </>
   );
 }

@@ -22,18 +22,18 @@ export default function MasonryLayout({ currTw, setCurrTw, twJson }: Props) {
 
 	const skeletonItems = useMemo(() => {
 		return Array.from({ length: 10 }, () => ({
-		  height: Math.random() * 100 + 200,
+			height: Math.random() * 100 + 200,
 		}));
-	  }, []);
+	}, []);
 
 	if (!twJson || twJson.length === 0) {
 		return (
 			<Masonry
 				items={skeletonItems}
-				render={(item, idx) => 
-					<Skeleton 
-						key={idx} 
-						height={item.height} 
+				render={(item, idx) =>
+					<Skeleton
+						key={idx}
+						height={item.height}
 						baseColor="#101828"
 						highlightColor="#374151"
 					/>
@@ -51,7 +51,7 @@ export default function MasonryLayout({ currTw, setCurrTw, twJson }: Props) {
 				// { title: 'ad', children: [] },
 			]}
 			config={MasonryConfig}
-			render={(item, idx) => <MasonryCard idx={idx} item={item} setCurrTw={setCurrTw} currTw={currTw} /> }
+			render={(item, idx) => <MasonryCard idx={idx} item={item} setCurrTw={setCurrTw} currTw={currTw} />}
 		/>
 	)
 }

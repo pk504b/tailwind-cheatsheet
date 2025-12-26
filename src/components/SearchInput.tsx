@@ -29,54 +29,64 @@ export default function SearchInput() {
     };
   }, []);
 
-  // Highlight search results
+  // Highlight search results (Debounced Imperative)
   useEffect(() => {
-    const details = document.querySelectorAll("details");
-    details.forEach((el) => {
-      const searchables = el.querySelectorAll(".searchable");
+    const timer = setTimeout(() => {
+      const details = document.querySelectorAll("details");
 
-      // Remove previous highlights
-      searchables.forEach((node) => {
-        const originalHtml = node.getAttribute("data-original-html");
-        originalHtml
-          ? (node.innerHTML = originalHtml)
-          : node.setAttribute("data-original-html", node.innerHTML);
-      });
-
-      if (query === "") {
-        el.classList.remove("hidden");
-        el.open = false;
-      } else if (query.length >= 3) {
-        const searchableText = Array.from(searchables)
-          .map((node) => node.textContent || "")
-          .join(" ")
-          .toLowerCase();
-
-        const matches = searchableText.includes(query.toLowerCase());
-        matches ? el.classList.remove("hidden") : el.classList.add("hidden");
-        const h3Text = el.querySelector("h3")?.textContent?.toLowerCase() || "";
-        el.open = matches && !h3Text.includes("color");
-
-        // Apply highlighting only to visible elements
-        if (matches) {
-          searchables.forEach((node) => {
-            const text = node.textContent || "";
-            // Escape regex special characters in query
-            const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-            const regex = new RegExp(`(${escapedQuery})`, "gi");
-
-            // Escape HTML in the source text before applying highlights
-            const escapedText = text
-              .replace(/&/g, "&amp;")
-              .replace(/</g, "&lt;")
-              .replace(/>/g, "&gt;");
-
-            const highlighted = escapedText.replace(regex, `<mark>$1</mark>`);
-            node.innerHTML = highlighted;
-          });
-        }
+      // Hoist regex creation for performance
+      let regex: RegExp | null = null;
+      if (query.length >= 3) {
+        const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        regex = new RegExp(`(${escapedQuery})`, "gi");
       }
-    });
+
+      details.forEach((el) => {
+        const searchables = el.querySelectorAll(".searchable");
+
+        // Remove previous highlights and restore original HTML
+        searchables.forEach((node) => {
+          const originalHtml = node.getAttribute("data-original-html");
+          if (originalHtml) {
+            node.innerHTML = originalHtml;
+          } else {
+            node.setAttribute("data-original-html", node.innerHTML);
+          }
+        });
+
+        if (query === "") {
+          el.classList.remove("hidden");
+          el.open = false;
+        } else if (query.length >= 3 && regex) {
+          const searchableText = Array.from(searchables)
+            .map((node) => node.textContent || "")
+            .join(" ")
+            .toLowerCase();
+
+          const matches = searchableText.includes(query.toLowerCase());
+          matches ? el.classList.remove("hidden") : el.classList.add("hidden");
+          const h3Text = el.querySelector("h3")?.textContent?.toLowerCase() || "";
+          el.open = matches && !h3Text.includes("color");
+
+          // Apply highlighting only to visible elements
+          if (matches) {
+            searchables.forEach((node) => {
+              const text = node.textContent || "";
+
+              // Escape HTML in the source text before applying highlights
+              const escapedText = text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;");
+
+              node.innerHTML = escapedText.replace(regex!, `<mark>$1</mark>`);
+            });
+          }
+        }
+      });
+    }, 200);
+
+    return () => clearTimeout(timer);
   }, [query]);
 
   return (
