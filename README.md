@@ -21,7 +21,7 @@
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Layout**: [React Plock](https://github.com/valentinhuber/react-plock) (Masonry Grid)
+- **Layout**: [React Plock](https://github.com/askides/react-plock) (Masonry Grid)
 
 <br />
 

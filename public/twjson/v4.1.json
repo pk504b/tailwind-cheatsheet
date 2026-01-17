@@ -4443,6 +4443,31 @@
               "value": ""
             },
             {
+              "class": "leading-tight",
+              "properties": "line-height: 1.25;",
+              "value": ""
+            },
+            {
+              "class": "leading-snug",
+              "properties": "line-height: 1.375;",
+              "value": ""
+            },
+            {
+              "class": "leading-normal",
+              "properties": "line-height: 1.5;",
+              "value": ""
+            },
+            {
+              "class": "leading-relaxed",
+              "properties": "line-height: 1.625;",
+              "value": ""
+            },
+            {
+              "class": "leading-loose",
+              "properties": "line-height: 2;",
+              "value": ""
+            },
+            {
               "class": "leading-<number>",
               "properties": "line-height: calc(var(--spacing) * <number>)",
               "value": ""
