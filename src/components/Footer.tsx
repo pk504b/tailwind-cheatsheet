@@ -4,11 +4,11 @@ export default function Footer() {
   return (
     <footer className="mt-4 text-xs opacity-70 flex flex-col gap-2 md:flex-row justify-between">
       <a
-        href="https://taillens.io/?aff=zmn621"
+        href="https://gojiberry.ai/?ref=twcs"
         target="_blank"
         className="italic"
       >
-        Need Tailwind CSS in your browser?
+        Find & Contact High-Intent Leads With AI
       </a>
 
       <a
